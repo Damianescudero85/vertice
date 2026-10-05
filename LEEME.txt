@@ -1,0 +1,15 @@
+VERTICE - tienda conectada a Zafiro en vivo
+===========================================
+Precios = precio de lista de Zafiro (sin ofertas) + $10.000. Talles con stock y productos nuevos se actualizan solos (cada ~15 min).
+
+PUBLICAR (una sola vez)
+1) Crear cuenta gratis en github.com.
+2) Arriba a la derecha: + -> New repository. Nombre: vertice. Create repository.
+3) Tocar "uploading an existing file" y arrastrar TODO lo que está dentro de esta carpeta
+   (archivos + carpetas img y netlify). Commit changes.
+4) Netlify: tu sitio -> Site configuration -> Build & deploy -> Link repository -> GitHub -> vertice.
+   Build command vacío. Deploy.
+5) Abrir la tienda con #admin al final: tiene que decir "Precios y talles en vivo de Zafiro".
+
+CAMBIOS DESDE EL PANEL (WhatsApp, productos propios, fotos)
+#admin -> hacer cambios -> "Descargar catálogo" -> en GitHub: Add file -> Upload files -> catalog.json -> Commit.
