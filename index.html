@@ -218,6 +218,11 @@ button{cursor:pointer}
   .line-btn{flex:0 0 auto;padding:9px 13px}
   .wa-float{width:52px;height:52px;right:12px}
 }
+
+.size-warn{display:flex;gap:8px;align-items:flex-start;background:#FDECEE;border:1.5px solid #D92D3A;color:#C21F2C;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:800;letter-spacing:.02em;line-height:1.35}
+.size-warn svg{flex:0 0 auto;margin-top:1px}
+.size-warn .link{color:#C21F2C;font-weight:800;font-size:inherit;letter-spacing:inherit}
+:root[data-theme="dark"] .size-warn{background:#3a1218;color:#FF8A94;border-color:#FF6B7D}
 </style>
 </head>
 <body>
@@ -344,6 +349,7 @@ function productModal(){
   h += '<div class="big-price price"><b>'+money(p.price)+'</b>'+(off ? '<s>'+money(p.old)+'</s>' : '')+'</div>';
   if (cuotas(p)) h += '<div class="cuotas">'+esc(cuotas(p))+'</div>';
   if (p.desc) h += '<p class="hint desc" style="margin:0">'+esc(p.desc)+'</p>';
+  if (sizes.length) h += '<div class="size-warn" role="note"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg><span>ANTES DE ELEGIR EL TALLE VERIFICAR EN LA '+(guideFor(p) ? '<button class="link" data-guide="'+guideFor(p)+'">GUÍA DE TALLES</button>' : 'GUÍA DE TALLES')+'</span></div>';
   if (sizes.length){
     h += '<div class="lbl-row"><span>Elegí tu talle</span>'+(guideFor(p) ? '<button class="link" data-guide="'+guideFor(p)+'">Guía de talles</button>' : '')+'</div><div class="sizes">';
     sizes.forEach(function(s){ var dis = so || out.indexOf(s) >= 0; h += '<button class="sz" data-size="'+esc(s)+'" aria-pressed="'+(st.size===s)+'" '+(dis?"disabled":"")+'>'+esc(s)+'</button>'; });
